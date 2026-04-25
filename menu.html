@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Completo | AURA</title>
+    <meta name="description" content="Il menu completo di AURA. Un viaggio attraverso i sapori contemporanei.">
+    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="page-inner">
+    <div class="preloader">AURA</div>
+    <div id="cursor" class="custom-cursor"></div>
+    <div id="cursor-follower" class="custom-cursor-follower"></div>
+
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo static-logo">AURA</a>
+            <ul class="nav-links">
+                <li><a href="index.html#about" class="nav-item">La Storia</a></li>
+                <li><a href="index.html#team" class="nav-item">Il Team</a></li>
+                <li><a href="menu.html" class="nav-item">Menu</a></li>
+                <li><a href="index.html#contact" class="nav-item btn-primary">Prenota</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <div class="container menu-page-container">
+            <div class="menu-page-header">
+                <h1 class="page-title scroll-reveal-text"><span class="text-inner">Menu Completo</span></h1>
+                <p class="page-subtitle scroll-reveal delay-1">Un viaggio attraverso i sapori contemporanei, guidato dall'istinto e dalla materia.</p>
+            </div>
+
+            <div class="dishes-grid">
+                <!-- Dish 1 -->
+                <div class="dish-item">
+                    <div class="dish-card" onclick="toggleIngredients(event, this.closest('.dish-item'))" onmousemove="handleParallax(event)" onmouseleave="resetParallax(event)">
+                        <img src="C:\Users\sisto\.gemini\antigravity\brain\65578c23-71ce-456b-8658-04911a2992a7\risotto_tartufo_gourmet_1777147394171.png" alt="Risotto al Tartufo" data-slot="dish-1" class="dish-img">
+                        <div class="dish-ingredients-overlay">
+                            <h4>Ingredienti</h4>
+                            <p>Riso Carnaroli, Tartufo Nero Pregiato, Parmigiano Reggiano 36 mesi, Burro d'alpeggio.</p>
+                        </div>
+                        <svg class="dish-border-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <path d="M 0 0 L 100 0 L 100 85 L 70 85 L 65 100 L 0 100 Z" />
+                        </svg>
+                    </div>
+                    <div class="dish-info">
+                        <span class="dish-name">Risotto al Tartufo</span>
+                        <span class="dish-price">€22</span>
+                    </div>
+                </div>
+
+                <!-- Dish 2 -->
+                <div class="dish-item">
+                    <div class="dish-card" onclick="toggleIngredients(event, this.closest('.dish-item'))" onmousemove="handleParallax(event)" onmouseleave="resetParallax(event)">
+                        <img src="" alt="Branzino in Crosta" data-slot="dish-2" class="dish-img">
+                        <div class="dish-ingredients-overlay">
+                            <h4>Ingredienti</h4>
+                            <p>Branzino selvaggio pescato all'amo, Patate croccanti, Erbe aromatiche, Olio EVO.</p>
+                        </div>
+                        <svg class="dish-border-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <path d="M 0 0 L 100 0 L 100 85 L 70 85 L 65 100 L 0 100 Z" />
+                        </svg>
+                    </div>
+                    <div class="dish-info">
+                        <span class="dish-name">Branzino in Crosta</span>
+                        <span class="dish-price">€28</span>
+                    </div>
+                </div>
+
+                <!-- Dish 3 -->
+                <div class="dish-item">
+                    <div class="dish-card" onclick="toggleIngredients(event, this.closest('.dish-item'))" onmousemove="handleParallax(event)" onmouseleave="resetParallax(event)">
+                        <img src="" alt="Tagliolini al Ragù" data-slot="dish-3" class="dish-img">
+                        <div class="dish-ingredients-overlay">
+                            <h4>Ingredienti</h4>
+                            <p>Pasta fresca all'uovo, Ragù di scottona, Pomodoro San Marzano DOP, Pecorino Romano.</p>
+                        </div>
+                        <svg class="dish-border-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <path d="M 0 0 L 100 0 L 100 85 L 70 85 L 65 100 L 0 100 Z" />
+                        </svg>
+                    </div>
+                    <div class="dish-info">
+                        <span class="dish-name">Tagliolini al Ragù</span>
+                        <span class="dish-price">€18</span>
+                    </div>
+                </div>
+
+                <!-- Dish 4 -->
+                <div class="dish-item">
+                    <div class="dish-card" onclick="toggleIngredients(event, this.closest('.dish-item'))" onmousemove="handleParallax(event)" onmouseleave="resetParallax(event)">
+                        <img src="" alt="Tiramisù della Casa" data-slot="dish-4" class="dish-img">
+                        <div class="dish-ingredients-overlay">
+                            <h4>Ingredienti</h4>
+                            <p>Savoiardi artigianali, Mascarpone fresco, Caffè arabica 100%, Cacao amaro in polvere.</p>
+                        </div>
+                        <svg class="dish-border-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <path d="M 0 0 L 100 0 L 100 85 L 70 85 L 65 100 L 0 100 Z" />
+                        </svg>
+                    </div>
+                    <div class="dish-info">
+                        <span class="dish-name">Tiramisù della Casa</span>
+                        <span class="dish-price">€9</span>
+                    </div>
+                </div>
+
+                <!-- Dish 5 -->
+                <div class="dish-item">
+                    <div class="dish-card" onclick="toggleIngredients(event, this.closest('.dish-item'))" onmousemove="handleParallax(event)" onmouseleave="resetParallax(event)">
+                        <img src="" alt="Carpaccio di Manzo" data-slot="dish-5" class="dish-img">
+                        <div class="dish-ingredients-overlay">
+                            <h4>Ingredienti</h4>
+                            <p>Filetto di Fassona Piemontese, Rucola selvatica, Scaglie di Parmigiano 24 mesi, Limone Costa d'Amalfi.</p>
+                        </div>
+                        <svg class="dish-border-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <path d="M 0 0 L 100 0 L 100 85 L 70 85 L 65 100 L 0 100 Z" />
+                        </svg>
+                    </div>
+                    <div class="dish-info">
+                        <span class="dish-name">Carpaccio di Manzo</span>
+                        <span class="dish-price">€16</span>
+                    </div>
+                </div>
+
+                <!-- Dish 6 -->
+                <div class="dish-item">
+                    <div class="dish-card" onclick="toggleIngredients(event, this.closest('.dish-item'))" onmousemove="handleParallax(event)" onmouseleave="resetParallax(event)">
+                        <img src="" alt="Panna Cotta" data-slot="dish-6" class="dish-img">
+                        <div class="dish-ingredients-overlay">
+                            <h4>Ingredienti</h4>
+                            <p>Panna fresca di panna, Baccello di vaniglia del Madagascar, Coulis di lamponi freschi, Fogliolina di menta.</p>
+                        </div>
+                        <svg class="dish-border-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <path d="M 0 0 L 100 0 L 100 85 L 70 85 L 65 100 L 0 100 Z" />
+                        </svg>
+                    </div>
+                    <div class="dish-info">
+                        <span class="dish-name">Panna Cotta</span>
+                        <span class="dish-price">€8</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-cta scroll-reveal text-center" style="margin-top: 6rem;">
+                <a href="index.html#contact" class="btn-primary">Prenota il tuo Tavolo</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content scroll-reveal">
+            <div class="footer-logo scroll-reveal-scale">AURA</div>
+            <div class="footer-social">
+                <a href="#" class="scroll-reveal delay-1">Instagram</a>
+                <a href="#" class="scroll-reveal delay-2">Facebook</a>
+            </div>
+            <div class="footer-copy scroll-reveal delay-3">
+                &copy; 2026 AURA Restaurant. Tutti i diritti riservati.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

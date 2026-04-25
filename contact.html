@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prenota | AURA</title>
+    <meta name="description" content="AURA - Prenota il tuo tavolo.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="preloader">AURA.</div>
+    <div id="cursor" class="custom-cursor"></div>
+    <div id="cursor-follower" class="custom-cursor-follower"></div>
+
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">AURA.</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-item">La Storia</a></li>
+                <li><a href="menu.html" class="nav-item">Menu</a></li>
+                <li><a href="gallery.html" class="nav-item">Galleria</a></li>
+                <li><a href="contact.html" class="nav-item btn-primary">Prenota</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="stack-container" style="padding-top: 100px;">
+        <section id="contact" class="contact section stack-section">
+            <div class="container">
+                <div class="contact-wrapper scroll-reveal">
+                    <div class="contact-info">
+                        <h2 class="section-title scroll-reveal-text"><span class="text-inner">Prenota</span></h2>
+                        <p>Assicurati il tuo tavolo per una serata indimenticabile.</p>
+                        <div class="info-block">
+                            <h4>Indirizzo</h4>
+                            <p>Via della Moda, 42 - Milano</p>
+                        </div>
+                        <div class="info-block">
+                            <h4>Orari</h4>
+                            <p>Mar - Dom: 19:30 - 00:00</p>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form id="reservation-form">
+                            <div class="form-group">
+                                <input type="text" id="name" required placeholder="Nome e Cognome">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="date" id="date" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="time" id="time" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <select id="guests" required>
+                                    <option value="" disabled selected>Numero di Ospiti</option>
+                                    <option value="1">1 Persona</option>
+                                    <option value="2">2 Persone</option>
+                                    <option value="3">3 Persone</option>
+                                    <option value="4">4 Persone</option>
+                                    <option value="5+">5+ Persone</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn-primary full-width">Conferma Prenotazione</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">AURA.</div>
+            <div class="footer-social">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+            </div>
+            <div class="footer-copy">
+                &copy; 2026 AURA Restaurant. Tutti i diritti riservati.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
