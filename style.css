@@ -39,7 +39,6 @@ body {
     cursor: none; /* Custom cursor */
 }
 
-/* Smooth Page Scroll Base */
 html {
     scroll-behavior: smooth;
     font-size: 16px;
@@ -967,6 +966,14 @@ footer {
     
     body {
         cursor: auto;
+    }
+    
+    body.no-scroll {
+        overflow: hidden;
+    }
+    
+    .menu-pinned-section {
+        height: 400vh;
     }
     
     .nav-item {

@@ -75,7 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // 3D Tilt Logic for Bento & Gallery
         viewables.forEach(el => {
             el.addEventListener('mouseenter', () => {
-                el.style.transition = 'none'; // Prevent jitter
+                // Una transizione leggerissima invece di 'none' smorza gli scatti (jitter)
+                el.style.transition = 'transform 0.15s ease-out'; 
             });
             el.addEventListener('mousemove', (e) => {
                 const rect = el.getBoundingClientRect();
@@ -85,14 +86,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
                 
-                const rotateX = ((y - centerY) / centerY) * -12; // max 12 deg
-                const rotateY = ((x - centerX) / centerX) * 12;
+                // Gradi ridotti a 5 e scale3d a 1.04: lo scale compensa il tilt
+                // in modo che il bordo della card non scappi via da sotto il cursore!
+                const rotateX = ((y - centerY) / centerY) * -5; // max 5 deg
+                const rotateY = ((x - centerX) / centerX) * 5;
                 
-                el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.03, 1.03, 1.03)`;
+                el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.04, 1.04, 1.04)`;
             });
             
             el.addEventListener('mouseleave', () => {
-                el.style.transition = ''; // Restore CSS transition
+                el.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'; // Restore CSS transition
                 el.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
             });
         });
@@ -211,12 +214,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainLogo = document.querySelector('.logo');
     let logoMaxMoveX = 0;
     let logoMaxMoveY = 0;
-    const logoMaxScale = 5; // Aumentato per maggiore impatto
-    const logoAnimDistance = window.innerHeight * 0.7; // Finishes fading before hero ends
+    let logoMaxScale = 5; 
+    let logoAnimDistance = window.innerHeight * 0.7; 
 
     function initLogoAnim() {
         if (!mainLogo) return;
         mainLogo.style.transform = 'none'; // reset to calculate natural position in navbar
+        
+        // Adattiamo la scala e la distanza dell'animazione per i dispositivi mobili
+        if (window.innerWidth <= 768) {
+            logoMaxScale = 2.2; 
+            logoAnimDistance = window.innerHeight * 0.4; // L'animazione finisce prima su mobile
+        } else {
+            logoMaxScale = 5;
+            logoAnimDistance = window.innerHeight * 0.7;
+        }
         
         // Use requestAnimationFrame to ensure layout is ready
         requestAnimationFrame(() => {
@@ -262,7 +274,14 @@ document.addEventListener('DOMContentLoaded', () => {
         mainLogo.style.textShadow = `0 0 40px rgba(226, 182, 89, ${shadowOpacity})`;
     }
 
-    window.addEventListener('resize', initLogoAnim);
+    let lastWidth = window.innerWidth;
+    window.addEventListener('resize', () => {
+        // Evita bug su mobile quando la barra degli indirizzi scompare durante lo scroll
+        if (window.innerWidth !== lastWidth) {
+            lastWidth = window.innerWidth;
+            initLogoAnim();
+        }
+    });
     setTimeout(initLogoAnim, 100); // wait for fonts
 
     // 5. Lightbox Logic
