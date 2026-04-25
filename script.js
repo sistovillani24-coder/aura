@@ -203,6 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     hamburger.addEventListener('click', () => {
         mobileMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
         document.body.classList.toggle('no-scroll');
     });
     
@@ -298,6 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
         item.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navLinks.classList.remove('active');
+            document.body.classList.remove('no-scroll');
         });
     });
 

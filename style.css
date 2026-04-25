@@ -45,6 +45,10 @@ html {
     font-size: 16px;
 }
 
+body.no-scroll {
+    overflow: hidden;
+}
+
 /* Custom Cursor */
 .custom-cursor {
     width: 8px;
@@ -963,5 +967,42 @@ footer {
     
     body {
         cursor: auto;
+    }
+    
+    .nav-item {
+        font-size: 1.5rem;
+    }
+    
+    .marquee-inner span {
+        font-size: 2.5rem;
+        padding-right: 2rem;
+    }
+    
+    .section {
+        padding: 5rem 0;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .gallery-item {
+        padding-bottom: 100%;
+    }
+    
+    .menu-card .bento-content {
+        padding: 1.5rem;
+    }
+    
+    .menu-card .dish-title {
+        font-size: 1.8rem;
+    }
+    
+    .menu-card .price {
+        font-size: 1.4rem;
+    }
+    
+    .hero-title {
+        letter-spacing: -1px;
     }
 }
