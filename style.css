@@ -1170,7 +1170,7 @@ footer {
         display: flex;
         flex-direction: column;
         gap: 6px;
-        z-index: 2002;
+        z-index: 4002;
     }
     
     .bar {
